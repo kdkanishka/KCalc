@@ -1,8 +1,6 @@
-package kcalc;
-
-import ui.BasicCalcPanel;
-
 import javax.swing.*;
+
+import com.kani.kcalc.core.view.BasicCalcPanel;
 
 public class Main {
     public static void main(String[] args) {

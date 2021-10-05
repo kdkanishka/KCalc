@@ -1,8 +1,8 @@
-package core.utils;
+package com.kani.kcalc.core.utils;
 
-import core.operations.Division;
-import core.operations.Multiplication;
-import core.operations.Operation;
+import com.kani.kcalc.core.operations.Division;
+import com.kani.kcalc.core.operations.Multiplication;
+import com.kani.kcalc.core.operations.Operation;
 
 import java.util.LinkedList;
 import java.util.List;

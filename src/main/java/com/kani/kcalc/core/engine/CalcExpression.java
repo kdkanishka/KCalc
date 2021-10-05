@@ -1,9 +1,7 @@
-package core;
+package com.kani.kcalc.core.engine;
 
-import core.operations.Division;
-import core.operations.Multiplication;
-import core.operations.Operation;
-import core.operations.OperationFactory;
+import com.kani.kcalc.core.operations.Operation;
+import com.kani.kcalc.core.operations.OperationFactory;
 
 import java.util.*;
 import java.util.stream.Collectors;

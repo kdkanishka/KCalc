@@ -1,4 +1,4 @@
-package core.operations;
+package com.kani.kcalc.core.operations;
 
 import org.junit.jupiter.api.Test;
 

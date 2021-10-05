@@ -1,13 +1,11 @@
-package core.utils;
+package com.kani.kcalc.core.utils;
 
-import core.CalcExpression;
-import core.operations.*;
+import com.kani.kcalc.core.operations.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Queue;
-import java.util.StringTokenizer;
 
 import static org.junit.jupiter.api.Assertions.*;
 

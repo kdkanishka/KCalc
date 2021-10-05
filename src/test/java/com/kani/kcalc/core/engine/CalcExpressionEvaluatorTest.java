@@ -1,6 +1,8 @@
-package core;
+package com.kani.kcalc.core.engine;
 
-import core.operations.OperationFactory;
+import com.kani.kcalc.core.engine.CalcExpression;
+import com.kani.kcalc.core.engine.CalcExpressionEvaluator;
+import com.kani.kcalc.core.engine.InvalidExpressionException;
 import org.junit.jupiter.api.Test;
 
 import java.math.RoundingMode;

@@ -1,8 +1,9 @@
-package ui;
+package com.kani.kcalc.core.view;
 
-import core.CalcExpression;
-import core.CalcExpressionEvaluator;
-import core.InvalidExpressionException;
+
+import com.kani.kcalc.core.engine.CalcExpression;
+import com.kani.kcalc.core.engine.CalcExpressionEvaluator;
+import com.kani.kcalc.core.engine.InvalidExpressionException;
 
 import javax.swing.*;
 import java.awt.*;

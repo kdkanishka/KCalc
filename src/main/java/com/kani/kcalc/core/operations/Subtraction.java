@@ -1,4 +1,4 @@
-package core.operations;
+package com.kani.kcalc.core.operations;
 
 public class Subtraction implements Operation {
     @Override

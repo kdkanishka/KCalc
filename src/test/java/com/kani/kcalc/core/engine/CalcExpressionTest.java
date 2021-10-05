@@ -1,6 +1,8 @@
-package core;
+package com.kani.kcalc.core.engine;
 
-import core.operations.*;
+import com.kani.kcalc.core.engine.CalcExpression;
+import com.kani.kcalc.core.engine.InvalidExpressionException;
+import com.kani.kcalc.core.operations.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

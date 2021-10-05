@@ -1,4 +1,4 @@
-package core.operations;
+package com.kani.kcalc.core.operations;
 
 public class Division implements Operation {
     @Override

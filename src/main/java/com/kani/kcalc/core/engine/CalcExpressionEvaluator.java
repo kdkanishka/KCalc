@@ -1,7 +1,7 @@
-package core;
+package com.kani.kcalc.core.engine;
 
-import core.operations.Operation;
-import core.utils.OperationUtil;
+import com.kani.kcalc.core.operations.Operation;
+import com.kani.kcalc.core.utils.OperationUtil;
 
 import java.util.List;
 import java.util.Queue;
