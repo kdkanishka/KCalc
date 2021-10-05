@@ -1,8 +1,8 @@
 package core.operations;
 
-public class Multiplication implements Operation{
+public class Multiplication implements Operation {
     @Override
-    public long exec(long n1, long n2) {
-        return 0;
+    public double exec(double n1, double n2) {
+        return n1 * n2;
     }
 }
