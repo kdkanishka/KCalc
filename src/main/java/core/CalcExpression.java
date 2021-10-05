@@ -30,7 +30,7 @@ public class CalcExpression {
                     .collect(Collectors.toCollection(LinkedList<Double>::new));
             return operandList;
         }catch (NumberFormatException e){
-            throw new InvalidExpressionException("Invalid expression, " + e.getMessage());
+            throw new InvalidExpressionException("Invalid expression, " + e.getMessage(), e);
         }
     }
 

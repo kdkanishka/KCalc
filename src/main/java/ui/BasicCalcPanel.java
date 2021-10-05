@@ -6,8 +6,6 @@ import core.InvalidExpressionException;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class BasicCalcPanel extends JPanel {
 
@@ -35,7 +33,6 @@ public class BasicCalcPanel extends JPanel {
         jTextArea.setFont(resultFont);
         jTextArea.setForeground(Color.BLUE);
         jTextArea.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-//        add(jTextArea);
 
         JScrollPane scrollBar=new JScrollPane(jTextArea,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         add(scrollBar);
