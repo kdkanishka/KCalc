@@ -1,14 +1,12 @@
 package com.kani.kcalc.core.engine;
 
-import com.kani.kcalc.core.engine.CalcExpression;
-import com.kani.kcalc.core.engine.CalcExpressionEvaluator;
-import com.kani.kcalc.core.engine.InvalidExpressionException;
 import org.junit.jupiter.api.Test;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CalcExpressionEvaluatorTest {
 

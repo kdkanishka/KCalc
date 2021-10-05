@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 
 public class CalcExpression {
     private String expressionText;
-    private List<Integer> divisionOrMultiplicationIndexes=new ArrayList<>();
 
     public CalcExpression(String expressionText) {
         this.expressionText = expressionText;

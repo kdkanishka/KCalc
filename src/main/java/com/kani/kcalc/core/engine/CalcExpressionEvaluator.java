@@ -22,11 +22,7 @@ public class CalcExpressionEvaluator {
             double operand2 = operands.get(dmIndex + 1);
             double result = op.exec(operand1, operand2);
 
-            operations.remove(dmIndex);
-            operands.remove(dmIndex);
-            operands.remove(dmIndex);
-
-            operands.add(dmIndex, result);
+            shrinkOperationsAndOperands(operands, operations, dmIndex, result);
 
             System.out.println(operands);
             System.out.println(operations);
@@ -40,16 +36,19 @@ public class CalcExpressionEvaluator {
             double operand2 = operands.get(1);
             double result = op.exec(operand1, operand2);
 
-            operations.remove(0);
-            operands.remove(0);
-            operands.remove(0);
-
-            operands.add(0, result);
+            shrinkOperationsAndOperands(operands, operations, 0, result);
 
             System.out.println(operands);
             System.out.println(operations);
         }
 
         return operands.get(0);
+    }
+
+    private void shrinkOperationsAndOperands(List<Double> operands, List<Operation> operations, int dmIndex, double result) {
+        operations.remove(dmIndex);
+        operands.remove(dmIndex);
+        operands.remove(dmIndex);
+        operands.add(dmIndex, result);
     }
 }
