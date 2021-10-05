@@ -1,3 +1,5 @@
+package com.kani.kcalc.core;
+
 import javax.swing.*;
 
 import com.kani.kcalc.core.view.BasicCalcPanel;
