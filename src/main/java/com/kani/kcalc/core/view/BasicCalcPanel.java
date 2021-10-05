@@ -50,7 +50,6 @@ public class BasicCalcPanel extends JPanel {
         calcButton.addActionListener(e -> {
             try {
                 String expression = expressionField.getText();
-                System.out.println(expression);
                 Expression basicExpression = new BasicExpression(expression);
                 CalcExpressionEvaluator evaluator = new CalcExpressionEvaluator();
                 double result = evaluator.evaluate(basicExpression);

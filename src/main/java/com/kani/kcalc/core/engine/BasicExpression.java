@@ -8,6 +8,9 @@ import com.kani.kcalc.core.operations.OperationFactory;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Basic mathematical expression with the support for basic math operators / , * , + , -
+ */
 public class BasicExpression implements Expression{
     private String expressionText;
 

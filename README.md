@@ -11,7 +11,6 @@ Yet another calculator based on BODMAS rule :)
 
 ## Design
 - Applied strategy pattern to implement open-closed principal
-- Single responsibility implemented in different levels
 
 #### Core design
 ![Core Design](https://raw.githubusercontent.com/kdkanishka/KCalc/master/docs/images/kcalc.png)
