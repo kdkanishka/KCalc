@@ -37,7 +37,7 @@ Yet another calculator based on BODMAS rule :)
 ## Getting started
 - Clone the project
 
-`git clone git@github.com:kdkanishka/KCalc.git`
+`git clone https://github.com/kdkanishka/KCalc.git`
 
 - Execute (Start the application without creating an executable jar)
 
