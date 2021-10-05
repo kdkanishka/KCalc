@@ -1,5 +1,7 @@
 package com.kani.kcalc.core.engine;
 
+import com.kani.kcalc.core.engine.exceptions.InvalidExpressionException;
+import com.kani.kcalc.core.engine.exceptions.UnsupportedOperatorException;
 import com.kani.kcalc.core.operations.*;
 import org.junit.jupiter.api.Test;
 
@@ -8,12 +10,12 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class CalcExpressionTest {
+class BasicExpressionTest {
 
     @Test
     void getOperands() throws InvalidExpressionException {
-        CalcExpression calcExpression = new CalcExpression("5.2-2*6/3");
-        List<Double> operands = calcExpression.getOperands();
+        BasicExpression basicExpression = new BasicExpression("5.2-2*6/3");
+        List<Double> operands = basicExpression.getOperands();
         assertEquals(operands.size(), 4);
 
         assertEquals(operands.get(0).doubleValue(),5.2);
@@ -25,9 +27,9 @@ class CalcExpressionTest {
     }
 
     @Test
-    void getOperators() {
-        CalcExpression calcExpression = new CalcExpression("5-2*6/3");
-        List<Operation> operators = calcExpression.getOperations();
+    void getOperators() throws UnsupportedOperatorException {
+        BasicExpression basicExpression = new BasicExpression("5-2*6/3");
+        List<Operation> operators = basicExpression.getOperations();
 
         assertEquals(operators.size(),3);
         assertTrue(operators.get(0) instanceof Subtraction);
@@ -36,9 +38,9 @@ class CalcExpressionTest {
     }
 
     @Test
-    void operatorsInLongExpression() {
-        CalcExpression calcExpression = new CalcExpression("5-2*6/3+1+6/2*8");
-        List<Operation> operators = calcExpression.getOperations();
+    void operatorsInLongExpression() throws UnsupportedOperatorException {
+        BasicExpression basicExpression = new BasicExpression("5-2*6/3+1+6/2*8");
+        List<Operation> operators = basicExpression.getOperations();
 
         assertEquals(operators.size(),7);
         assertTrue(operators.get(0) instanceof Subtraction);
@@ -52,8 +54,8 @@ class CalcExpressionTest {
     
     @Test
     void operandsInLongExpression() throws InvalidExpressionException {
-        CalcExpression calcExpression = new CalcExpression("5.2-2*6/3+1.75+6/2*8");
-        List<Double> operands = calcExpression.getOperands();
+        BasicExpression basicExpression = new BasicExpression("5.2-2*6/3+1.75+6/2*8");
+        List<Double> operands = basicExpression.getOperands();
         assertEquals(operands.size(), 8);
 
         assertEquals(operands.get(0).doubleValue(),5.2);

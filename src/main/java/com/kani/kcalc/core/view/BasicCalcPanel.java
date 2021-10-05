@@ -1,9 +1,11 @@
 package com.kani.kcalc.core.view;
 
 
-import com.kani.kcalc.core.engine.CalcExpression;
+import com.kani.kcalc.core.engine.BasicExpression;
 import com.kani.kcalc.core.engine.CalcExpressionEvaluator;
-import com.kani.kcalc.core.engine.InvalidExpressionException;
+import com.kani.kcalc.core.engine.Expression;
+import com.kani.kcalc.core.engine.exceptions.InvalidExpressionException;
+import com.kani.kcalc.core.engine.exceptions.UnsupportedOperatorException;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,50 +17,55 @@ public class BasicCalcPanel extends JPanel {
 
         add(new JLabel("Expression"));
 
-        TextField display = new TextField();
-        display.setText("");
-        display.setColumns(18);
+        TextField expressionField = new TextField();
+        expressionField.setText("");
+        expressionField.setColumns(18);
 
-        Font calcFont=new Font("Monospaced", Font.BOLD, 20);
-        Font resultFont=new Font("Monospaced", Font.BOLD, 16);
-        display.setFont(calcFont);
+        Font calcFont = new Font("Monospaced", Font.BOLD, 20);
+        Font resultFont = new Font("Monospaced", Font.BOLD, 16);
+        expressionField.setFont(calcFont);
 
 
-        add(display);
+        add(expressionField);
         JButton clearButton = new JButton("Clear");
         JButton calcButton = new JButton("Evaluate");
         add(calcButton);
         add(clearButton);
 
-        JTextArea jTextArea = new JTextArea(7,22);
-        jTextArea.setFont(resultFont);
-        jTextArea.setForeground(Color.BLUE);
-        jTextArea.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        JTextArea resultsTextArea = new JTextArea(7, 22);
+        resultsTextArea.setFont(resultFont);
+        resultsTextArea.setForeground(Color.BLUE);
+        resultsTextArea.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 
-        JScrollPane scrollBar=new JScrollPane(jTextArea,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        JScrollPane scrollBar = new JScrollPane(resultsTextArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         add(scrollBar);
 
 
         //add click event for clear
         clearButton.addActionListener(e -> {
-            display.setText("");
+            expressionField.setText("");
         });
 
         //add click event for evaluation
         calcButton.addActionListener(e -> {
             try {
-                String expression = display.getText();
+                String expression = expressionField.getText();
                 System.out.println(expression);
-                CalcExpression calcExpression = new CalcExpression(expression);
+                Expression basicExpression = new BasicExpression(expression);
                 CalcExpressionEvaluator evaluator = new CalcExpressionEvaluator();
-                double result = evaluator.evaluate(calcExpression);
-                display.setText("");
+                double result = evaluator.evaluate(basicExpression);
+                expressionField.setText("");
 
-                jTextArea.append(expression+ "=" +result+"\n");
-            }catch (InvalidExpressionException ex){
+                resultsTextArea.append(expression + "=" + result + "\n");
+            } catch (InvalidExpressionException ex) {
                 JOptionPane.showMessageDialog(null,
                         ex.getMessage(),
                         "Evaluation Failure",
+                        JOptionPane.WARNING_MESSAGE);
+            } catch (UnsupportedOperatorException ex) {
+                JOptionPane.showMessageDialog(null,
+                        ex.getMessage(),
+                        "Unsupported Operator in Expression",
                         JOptionPane.WARNING_MESSAGE);
             }
         });

@@ -1,15 +1,17 @@
 package com.kani.kcalc.core.engine;
 
+import com.kani.kcalc.core.engine.exceptions.InvalidExpressionException;
+import com.kani.kcalc.core.engine.exceptions.UnsupportedOperatorException;
 import com.kani.kcalc.core.operations.Operation;
 import com.kani.kcalc.core.operations.OperationFactory;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class CalcExpression {
+public class BasicExpression implements Expression{
     private String expressionText;
 
-    public CalcExpression(String expressionText) {
+    public BasicExpression(String expressionText) {
         this.expressionText = expressionText;
     }
 
@@ -37,7 +39,7 @@ public class CalcExpression {
      *
      * @return list of operators [-,*,/]
      */
-    public List<Operation> getOperations() {
+    public List<Operation> getOperations() throws UnsupportedOperatorException {
         final List<Character> supportedOperators = Arrays.asList('/', '*', '+', '-');
         final List<Operation> operators = new LinkedList<>();
         for (int i = 0; i < expressionText.length(); i++) {

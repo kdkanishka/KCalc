@@ -1,4 +1,4 @@
-package com.kani.kcalc.core.engine;
+package com.kani.kcalc.core.engine.exceptions;
 
 public class InvalidExpressionException extends Exception{
     public InvalidExpressionException() {

@@ -1,5 +1,7 @@
 package com.kani.kcalc.core.engine;
 
+import com.kani.kcalc.core.engine.exceptions.InvalidExpressionException;
+import com.kani.kcalc.core.engine.exceptions.UnsupportedOperatorException;
 import com.kani.kcalc.core.operations.Operation;
 import com.kani.kcalc.core.utils.OperationUtil;
 
@@ -8,9 +10,9 @@ import java.util.Queue;
 
 public class CalcExpressionEvaluator {
 
-    public double evaluate(CalcExpression calcExpression) throws InvalidExpressionException {
-        List<Double> operands = calcExpression.getOperands();
-        List<Operation> operations = calcExpression.getOperations();
+    public double evaluate(Expression expression) throws InvalidExpressionException, UnsupportedOperatorException {
+        List<Double> operands = expression.getOperands();
+        List<Operation> operations = expression.getOperations();
         Queue<Integer> dMIndexes = OperationUtil.getDivisionOrMultiplicationIndexes(operations);
 
 

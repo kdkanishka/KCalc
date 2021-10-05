@@ -1,8 +1,10 @@
 package com.kani.kcalc.core.operations;
 
+import com.kani.kcalc.core.engine.exceptions.UnsupportedOperatorException;
+
 public class OperationFactory {
 
-    public static Operation getOperation(char operation) {
+    public static Operation getOperation(char operation) throws UnsupportedOperatorException {
         Operation op;
         switch (operation) {
             case '/':
@@ -18,7 +20,7 @@ public class OperationFactory {
                 op = new Subtraction();
                 break;
             default:
-                throw new IllegalStateException("Unknown Operator, " + operation);
+                throw new UnsupportedOperatorException("Unknown Operator, " + operation);
         }
         return op;
     }
