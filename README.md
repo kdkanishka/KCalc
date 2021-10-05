@@ -7,12 +7,13 @@ Yet another calculator based on BODMAS rule :)
 - Calculation history
 
 ## Approach
+![Aproac](https://raw.githubusercontent.com/kdkanishka/KCalc/master/docs/images/1633417868332.jpg)
 
 ## Design
 - Applied strategy pattern to implement open-closed principal
 - Single responsibility implemented by
 #### Core design
-![HTTP Receptor](https://raw.githubusercontent.com/kdkanishka/KCalc/master/docs/images/kcalc.png)
+![Core Design](https://raw.githubusercontent.com/kdkanishka/KCalc/master/docs/images/kcalc.png)
 
 
 ## Implementation
