@@ -6,13 +6,13 @@ import com.kani.kcalc.core.view.BasicCalcPanel;
 
 public class Main {
     public static void main(String[] args) {
-        JFrame frame = new JFrame("KCalc");
-        frame.add(new BasicCalcPanel());
+        JFrame kCalcFrame = new JFrame("KCalc");
+        kCalcFrame.add(new BasicCalcPanel());
 
-        frame.setSize(240,320);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
-        frame.setVisible(true);
+        kCalcFrame.setSize(240,320);
+        kCalcFrame.setLocationRelativeTo(null);
+        kCalcFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        kCalcFrame.setResizable(false);
+        kCalcFrame.setVisible(true);
     }
 }
