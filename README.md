@@ -37,13 +37,20 @@ Yet another calculator based on BODMAS rule :)
 
 ## Getting started
 - Clone the project
-  --`git clone git@github.com:kdkanishka/KCalc.git`
+
+`git clone git@github.com:kdkanishka/KCalc.git`
+
 - Execute (Start the application without creating an executable jar)
-  -- `mvn compile exec:java -Dexec.mainClass="com.kani.kcalc.core.Main"`
+
+`mvn compile exec:java -Dexec.mainClass="com.kani.kcalc.core.Main"`
+
 - Run tests with test coverage
-  -- `mvn clean test`
+
+`mvn clean test`
+
 - Coverage reports can be found on
-  -- `<PROJECT_DIR>/target/site/jacoco/index.html`
+
+`<PROJECT_DIR>/target/site/jacoco/index.html`
 
 ## Author
 Kanishka Dilshan (kdkanishka@gmail.com)
